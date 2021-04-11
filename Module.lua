@@ -2396,6 +2396,14 @@ function Material.Load(Config)
 				return SliderTitle.Text
 			end
 
+			function SliderLibrary:SetValue(Value)
+				SliderValue.Text = tostring(Value)
+			end
+
+			function SliderLibrary:GetValue()
+				return tonumber(SliderValue.Text)
+			end
+
 			function SliderLibrary:SetMin(Value)
 				SliderMin = Value
 				local SliderDef = math.clamp(SliderConfig.Def, SliderMin, SliderMax) or math.clamp(50, SliderMin, SliderMax)
